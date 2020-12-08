@@ -9,10 +9,9 @@
  *	 // for each object that matches the query
  * });
  */
-//({define:typeof define!="undefined"?define:function(deps, factory){module.exports = factory(exports, require("./parser"), require("./js-array"));}}).
-//define(["exports", "./parser", "./js-array"], function(exports, parser, jsarray){
-({define:typeof define!="undefined"?define:function(deps, factory){module.exports = factory(exports, require("./parser"), require("./util/each"));}}).
-define(["exports", "./parser", "./util/each"], function(exports, parser, each){
+var exports = {};
+var parser = require("./parser");
+var each = require("./util/each");
 
 var parseQuery = parser.parseQuery;
 try{
@@ -267,5 +266,4 @@ Query.prototype.toMongo = function(options){
 };
 */
 
-return exports;
-});
+module.exports = exports;

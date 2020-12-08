@@ -2,9 +2,9 @@
  * This module provides RQL parsing. For example:
  * var parsed = require("./parser").parse("b=3&le(c,5)");
  */
-({define:typeof define!="undefined"?define:function(deps, factory){module.exports = factory(exports, require("./util/contains"));}}).
-define(["exports", "./util/contains"], function(exports, contains){
 
+var exports = {};
+var contains = require("./util/contains");
 var operatorMap = {
 	"=": "eq",
 	"==": "eq",
@@ -290,5 +290,5 @@ exports.Query = function(){
 	this.name = "and";
 	this.args = [];
 };
-return exports;
-});
+
+module.exports = exports;
